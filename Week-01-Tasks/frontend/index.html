@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inspire Me - Quote of the Day</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-shapes">
+    <div class="shape one"></div>
+    <div class="shape two"></div>
+    <div class="shape three"></div>
+  </div>
+
+  <main class="quote-container">
+    <h1 class="title">Inspire Me</h1>
+
+    <section class="quote-box" id="quoteBox" aria-live="polite" aria-atomic="true">
+      <div class="quote-icon" aria-hidden="true">❝</div>
+      <blockquote id="quoteText">Loading inspiration...</blockquote>
+      <p id="quoteAuthor">—</p>
+      <div class="decor-flourish" aria-hidden="true"></div>
+    </section>
+
+    <div class="buttons-row">
+      <button id="refreshBtn" class="btn-glow" aria-label="Get new quote">New Inspiration</button>
+      <button id="saveFavBtn" class="btn-outline" aria-label="Save quote to favorites" title="Save to Favorites">❤</button>
+    </div>
+
+    <section id="favoritesSection" class="favorites-section" hidden>
+      <h2>Favorites</h2>
+      <ul id="favoritesList" class="favorites-list" aria-live="polite" aria-atomic="true"></ul>
+      <button id="closeFavBtn" class="btn-outline">Close Favorites</button>
+    </section>
+
+    <button id="showFavBtn" class="btn-outline show-fav-btn" aria-label="Show favorites">💬 Favorites</button>
+
+    <div class="share-buttons">
+      <button id="shareTwitter" class="btn-twitter" aria-label="Share quote on Twitter" title="Share on Twitter">🐦 Twitter</button>
+      <button id="shareFacebook" class="btn-facebook" aria-label="Share quote on Facebook" title="Share on Facebook">📘 Facebook</button>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

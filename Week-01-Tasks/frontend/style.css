@@ -1,0 +1,338 @@
+/* Base styles - Keep previous styles from before with additions below */
+
+body, button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  overflow: hidden;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  transition: background 1s ease;
+}
+
+/* Background Floating Shapes */
+.background-shapes .shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.3;
+  animation: float 20s infinite ease-in-out alternate;
+  transition: background-color 1s;
+}
+
+.background-shapes .one {
+  width: 300px;
+  height: 300px;
+  background: #ff6f91;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.background-shapes .two {
+  width: 400px;
+  height: 400px;
+  background: #ffc75f;
+  bottom: 15%;
+  right: 20%;
+  animation-delay: 7s;
+}
+
+.background-shapes .three {
+  width: 250px;
+  height: 250px;
+  background: #845ec2;
+  top: 50%;
+  right: 35%;
+  animation-delay: 3.5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-30px) translateX(20px);
+  }
+}
+
+/* Container */
+.quote-container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 24px;
+  max-width: 600px;
+  width: 100%;
+  padding: 3rem 2.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+/* Title */
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #5a2a83;
+  letter-spacing: 1.5px;
+}
+
+/* Quote Box with transition effect */
+.quote-box {
+  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 2rem 2rem 3rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 20px rgba(90, 42, 131, 0.2);
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #42275a;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.6;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+.quote-box.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.quote-box.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Quote Icon */
+.quote-icon {
+  position: absolute;
+  font-size: 5rem;
+  top: -1.1rem;
+  left: 1.5rem;
+  color: #d6bfff;
+  opacity: 0.3;
+  user-select: none;
+  font-family: serif;
+}
+
+/* Quote Text */
+blockquote {
+  margin: 0;
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.02em;
+}
+
+/* Quote Author */
+#quoteAuthor {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #301934;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Decorative flourish */
+.decor-flourish {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  opacity: 0.15;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="none" height="40" stroke="%23442275a" stroke-width="2" viewBox="0 0 24 24" width="40" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C7 17 4 10 8 7c4-3 7 5 7 5"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  user-select: none;
+}
+
+/* Buttons */
+.btn-glow {
+  background: #7b2ff7; /* Purple */
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 8px #7b2ff7;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
+  margin-right: 0.5rem;
+}
+
+.btn-glow:hover,
+.btn-glow:focus {
+  box-shadow: 0 0 20px #b07fff, 0 0 30px #d4b3ff;
+  background: #b07fff;
+  transform: scale(1.1);
+  outline: none;
+}
+
+.btn-glow:active {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #7b2ff7;
+  padding: 1rem 1.8rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  color: #7b2ff7;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+  background-color: #7b2ff7;
+  color: white;
+  transform: scale(1.1);
+  outline: none;
+}
+
+.btn-outline:active {
+  transform: scale(0.95);
+}
+
+/* Buttons container */
+.buttons-row {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Favorites Section */
+.favorites-section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 1rem 2rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  margin: 1rem auto 0;
+  text-align: left;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+.favorites-list {
+  list-style: none;
+  margin: 0.5rem 0 1rem;
+  padding: 0;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.favorites-list li {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+  font-style: italic;
+  color: #42275a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.favorites-list li button.remove-fav-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #c63232;
+  cursor: pointer;
+}
+
+.favorites-list li button.remove-fav-btn:hover {
+  color: #ff4d4d;
+}
+
+/* Show Favorites button */
+.show-fav-btn {
+  display: block;
+  margin: 0 auto 1.5rem;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  width: 140px;
+}
+
+/* Share buttons container */
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.share-buttons button {
+  cursor: pointer;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.btn-twitter {
+  background: #1da1f2;
+  color: white;
+}
+
+.btn-twitter:hover {
+  background: #0d95e8;
+}
+
+.btn-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.btn-facebook:hover {
+  background: #2d4373;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .quote-box {
+    font-size: 1.1rem;
+    padding: 1.5rem;
+    min-height: 140px;
+  }
+  
+  .btn-glow, .btn-outline, .show-fav-btn {
+    width: 100%;
+    margin: 0.25rem 0;
+    font-size: 1rem;
+  }
+  
+  .buttons-row {
+    flex-direction: column;
+  }
+
+  .share-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
